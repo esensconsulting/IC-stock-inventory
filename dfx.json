@@ -4,9 +4,14 @@
       "main": "src/backend/auth.mo",
       "type": "motoko"
     },
+    "stock": {
+      "main": "src/backend/stock.mo",
+      "type": "motoko"
+    },
     "frontend": {
       "dependencies": [
-        "auth"
+        "auth",
+        "stock"
       ],
       "frontend": {
         "entrypoint": "src/frontend/public/index.js",
