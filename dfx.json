@@ -1,0 +1,42 @@
+{
+  "canisters": {
+    "auth": {
+      "main": "src/backend/auth.mo",
+      "type": "motoko"
+    },
+    "frontend": {
+      "dependencies": [
+        "auth"
+      ],
+      "frontend": {
+        "entrypoint": "src/frontend/public/index.js",
+        "output": "dist"
+      },
+      "source": [
+        "src/frontend/assets",
+        "dist"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "output": "canisters/",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.6.26",
+  "networks": {
+    "ic": {
+      "providers": [
+        "https://gw.dfinity.network"
+      ],
+      "type": "persistent"
+    },
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
